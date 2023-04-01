@@ -24,6 +24,7 @@ task("create-plan", "create raise plan")
         sponsor: signer.address,
         serverSigner: signer.address,
         companyId: 1,
+        spAddress: signer.address,
     }
    
     const nodeInfo = {

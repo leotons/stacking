@@ -44,7 +44,7 @@ module.exports = async ({ deployments }) => {
 
     await deploy("LetsFilRaiseFactory", {
         from: deployer.address,
-        args: [],
+        args: ["0x47C1Cbb1D676B4464c19C5c58deaA50bA468C69B"],
         maxPriorityFeePerGas: priorityFee,
         log: true,
     })

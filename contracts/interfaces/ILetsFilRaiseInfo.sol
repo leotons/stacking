@@ -13,6 +13,7 @@ interface ILetsFilRaiseInfo {
         uint256 servicerShare;  // 服务商权益
         address sponsor;        // 发起人地址
         uint256 companyId;      //发起单位id
+        address spAddress;      //服务商地址
     }
 
     struct NodeInfo {
@@ -21,7 +22,6 @@ interface ILetsFilRaiseInfo {
         uint256 sealPeriod;         // 封装周期
         uint256 nodePeriod;         // 节点有效期
         uint256 opsSecurityFund;    // 运维保证金
-        address manager;            // 通过创建合约单独指定
         address opsSecurityFundPayer; // 缴纳运维保证金地址
         uint64 minerID;             // Miner ID
     }
