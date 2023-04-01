@@ -8,24 +8,7 @@ const { planAddress } = require( "./constant");
 const hre = require("hardhat");
 const util = require("util");
 const request = util.promisify(require("request"));
-
-async function callRpc(method, params) {
-  var options = {
-    method: "POST",
-    url: "https://api.hyperspace.node.glif.io/rpc/v1",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      jsonrpc: "2.0",
-      method: method,
-      params: params,
-      id: 1,
-    }),
-  };
-  const res = await request(options);
-  return JSON.parse(res.body).result;
-}
+const { planAddress, callRpc } = require( "./common");
 
 async function main() {
     const [owner] = await ethers.getSigners();

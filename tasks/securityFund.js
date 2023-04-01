@@ -1,26 +1,7 @@
 const {task} = require("hardhat/config");
 const util = require("util");
 const request = util.promisify(require("request"));
-const { planAddress } = require( "./constant");
-
-async function callRpc(method, params) {
-    var options = {
-      method: "POST",
-      url: "https://api.hyperspace.node.glif.io/rpc/v1",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        jsonrpc: "2.0",
-        method: method,
-        params: params,
-        id: 1,
-      }),
-    };
-    const res = await request(options);
-    return JSON.parse(res.body).result;
-}
-
+const { planAddress } = require( "./common");
 
 task("payOPSSecurityFund", "pay OPS security fund")
   .setAction(async (taskArgs, {network, ethers}) => {
